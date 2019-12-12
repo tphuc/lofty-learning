@@ -15,7 +15,7 @@ import RouteURL from '../../../components/RouteURL';
 const ParentInvitation = (props) => {
     const history = useHistory()
     return (
-        <Layout animation='slideInUp'>
+        <Layout style={{marginTop:RFValue(35), paddingTop:RFValue(0)}} animation='slideInUp'>
             <ImageBackground
                 style={{ position: 'absolute', width: '100%', height: '100%' }} source={require('../../../assets/images/parent/invite.png')} >
                 <Navigationbar

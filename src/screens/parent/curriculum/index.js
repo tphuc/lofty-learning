@@ -70,7 +70,7 @@ const Unit = (props) => {
             {
                 expand &&
                 <Anim.View style={{ display: "flex", flexDirection: 'column' }} animation='slideInLeft'>
-                    <TouchableOpacity activeOpacity={0.8} onPress={() => history.replace(RouteURL.parent_curriculum + '/colors')} style={{ maxHeight: RFValue(50), display: "flex", flexDirection: 'row', backgroundColor: "#fff", borderRadius: 5, marginVertical: RFValue(5), elevation: 4, }}>
+                    <TouchableOpacity activeOpacity={0.8} onPress={() => history.replace(RouteURL.parent_curriculum + '/colors')} style={{ maxHeight: RFValue(50), display: "flex", flexDirection: 'row', backgroundColor: "#fff", borderRadius: 5, marginVertical: RFValue(5), elevation: 4, shadowColor:'#111', shadowOffset: { width: 0, height:10}, shadowOpacity: 0.2, shadowRadius:10 }}>
                         <View style={{ flex: 1 }}>
                             <Image style={{ height: "100%", width: '100%' }} resizeMode='contain' source={require('../../../assets/images/curriculum/color.png')} />
                         </View>
@@ -86,7 +86,7 @@ const Unit = (props) => {
                             <Text> 0 / 14</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={0.8} style={{ maxHeight: RFValue(50), display: "flex", flexDirection: 'row', backgroundColor: "#fff", borderRadius: 5, marginVertical: RFValue(5), elevation: 10, }}>
+                    <TouchableOpacity activeOpacity={0.8} style={{ maxHeight: RFValue(50), display: "flex", flexDirection: 'row', backgroundColor: "#fff", borderRadius: 5, marginVertical: RFValue(5), elevation: 10, shadowColor:'#111', shadowOffset: { width: 0, height:10}, shadowOpacity: 0.2, shadowRadius:10 }}>
                         <View style={{ flex: 1 }}>
                             <Image style={{ height: "100%", width: '100%' }} resizeMode='contain' source={require('../../../assets/images/curriculum/number.png')} />
                         </View>
@@ -102,7 +102,7 @@ const Unit = (props) => {
                             <Text> 0 / 14</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={0.8} style={{ maxHeight: RFValue(50), display: "flex", flexDirection: 'row', backgroundColor: "#fff", borderRadius: 5, marginVertical: RFValue(5), elevation: 10, }}>
+                    <TouchableOpacity activeOpacity={0.8} style={{ maxHeight: RFValue(50), display: "flex", flexDirection: 'row', backgroundColor: "#fff", borderRadius: 5, marginVertical: RFValue(5), elevation: 10, shadowColor:'#111', shadowOffset: { width: 0, height:10}, shadowOpacity: 0.2, shadowRadius:10}}>
                         <View style={{ flex: 1 }}>
                             <Image style={{ height: "100%", width: '100%' }} resizeMode='contain' source={require('../../../assets/images/curriculum/toy.png')} />
                         </View>
@@ -118,7 +118,7 @@ const Unit = (props) => {
                             <Text> 0 / 14</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity activeOpacity={0.8} style={{ maxHeight: RFValue(50), display: "flex", flexDirection: 'row', backgroundColor: "#fff", borderRadius: 5, marginVertical: RFValue(5), elevation: 10, }}>
+                    <TouchableOpacity activeOpacity={0.8} style={{ maxHeight: RFValue(50), display: "flex", flexDirection: 'row', backgroundColor: "#fff", borderRadius: 5, marginVertical: RFValue(5), elevation: 10,shadowColor:'#111', shadowOffset: { width: 0, height:10}, shadowOpacity: 0.2, shadowRadius:10 }}>
                         <View style={{ flex: 1 }}>
                             <Image style={{ height: "100%", width: '100%' }} resizeMode='contain' source={require('../../../assets/images/curriculum/family.png')} />
                         </View>
@@ -149,7 +149,7 @@ const Curriculum = (props) => {
             <Route exact path={RouteURL.parent_curriculum} render={() =>
                 <>
                     <Layout animation='fadeInLeft'>
-                        <StatusBar barStyle='light-content' backgroundColor='rgb(229, 103, 85)' />
+                        <StatusBar barStyle='dark-content' backgroundColor='rgb(229, 103, 85)' />
                         <Navigationbar colors={['rgb(229, 103, 85)', 'rgb(219, 23, 110)']}
                             leftComponent={<Navigationbar.Item icon={<AntIcon color='white' name='left' />} onPress={() => history.replace(RouteURL.parent_home)} />}
                             centerComponent={<Navigationbar.Item title='Curriculum' textStyle={{ color: 'white' }} />}

@@ -11,7 +11,7 @@ const TodayHomework = (props) => {
     const history = useHistory();
     return (
         <Layout animation='fadeIn'>
-            <StatusBar barStyle='light-content' backgroundColor='rgb(233, 200, 50)' />
+            <StatusBar barStyle='dark-content' backgroundColor='rgb(233, 200, 50)' />
             <Navigationbar colors={['rgb(233, 200, 50)', 'rgb(253, 137, 127)']}
                 leftComponent={<Navigationbar.Item icon={<AntIcon color='white' name='left' />} onPress={() => history.replace(RouteURL.parent_home)} />}
                 centerComponent={<Navigationbar.Item title="Today's homework" textStyle={{ color: 'white' }} />}

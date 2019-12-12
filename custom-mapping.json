@@ -41,7 +41,7 @@
         "text-label-font-size": 12,
         "text-label-line-height": 16,
         "text-label-font-weight": "800",
-        "text-font-family": "Baloo-Regular"
+        "text-font-family": "Chalkboard SE"
     },
     "components": {
         "Avatar": {

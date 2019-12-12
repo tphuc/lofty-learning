@@ -57,7 +57,7 @@ const Flashcard = (props) => {
         <>
             <Route exact path={RouteURL.parent_home_flashcard} render={() =>
                 <Layout>
-                    <StatusBar barStyle='light-content' backgroundColor='rgb(79, 97, 248)' />
+                    <StatusBar barStyle='dark-content' backgroundColor='rgb(79, 97, 248)' />
                     <NavigationBar
                         colors={['rgb(79, 97, 248)', 'rgb(0, 14, 128)']}
                         leftComponent={<NavigationBar.Item onPress={() => history.replace(RouteURL.parent_home)} icon={<AntIcon name='left' style={{ color: "#fff" }} />} />}

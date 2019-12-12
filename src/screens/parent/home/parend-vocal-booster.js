@@ -68,7 +68,7 @@ const ParentVocalBooster = (props) => {
         <>
             <Route exact path={RouteURL.parent_home_vocalbooster} render={() => 
                 <Layout>
-                    <StatusBar barStyle='light-content' backgroundColor='rgb(51, 208, 194)' />
+                    <StatusBar barStyle='dark-content' backgroundColor='rgb(51, 208, 194)' />
                     <NavigationBar
                         colors={['rgb(51, 208, 194)', 'rgb(0, 154, 124)']}
                         leftComponent={<NavigationBar.Item icon={<AntIcon name='left' style={{color:'#fff'}} />} onPress={() => history.replace(RouteURL.parent_home)} />}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, Image, Dimensions, TouchableOpacity } from 'react-native';
+import { View, ScrollView, Image, Dimensions, TouchableOpacity, StatusBar } from 'react-native';
 import { Route, useHistory } from 'react-router-native';
 import RouteURL from '../../../../components/RouteURL';
 import Layout from '../../../../components/Layout';
@@ -98,6 +98,7 @@ const CustomFlashcard = (props) => {
 
     return (
         <Layout>
+            <StatusBar barStyle='dark-content' ></StatusBar>
             <NavigationBar
                 colors={['rgb(79, 97, 248)', 'rgb(0, 14, 128)']}
                 leftComponent={<NavigationBar.Item onPress={() => history.replace(RouteURL.parent_home_flashcard)} icon={<AntIcon name='left' style={{ color: "#fff" }} />} />}

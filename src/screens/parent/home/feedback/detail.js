@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, View, Image, TouchableOpacity } from 'react-native';
+import { ScrollView, View, Image, TouchableOpacity, } from 'react-native';
 import Layout from '../../../../components/Layout';
 import Navigationbar from '../../../../components/NavigationBar';
 import AntIcon from 'react-native-vector-icons/AntDesign';

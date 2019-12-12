@@ -77,7 +77,7 @@ const TeacherFeedback = (props) => {
         <>
             <Route exact path={RouteURL.parent_home_feedback} render={() =>
                 <Layout animation='fadeIn'>
-                    <StatusBar barStyle='light-content' backgroundColor='rgb(151, 93, 242)' />
+                    <StatusBar barStyle='dark-content' backgroundColor='rgb(151, 93, 242)' />
                     <Navigationbar colors={['rgb(151, 93, 242)', 'rgb(74, 28, 128)']}
                         leftComponent={<Navigationbar.Item icon={<AntIcon color='white' name='left' />} onPress={() => history.replace(RouteURL.parent_home)} />}
                         centerComponent={<Navigationbar.Item title="Teacher's feedback" textStyle={{ color: 'white' }} />}
