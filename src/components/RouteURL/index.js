@@ -1,6 +1,11 @@
 export default RouteURL = {
     switch_account: '/',
     child_home: '/child/home',
+    child_stories: '/child/home/stories',
+    child_flashcard: '/child/home/flashcards',
+    child_lotfyleader: '/child/home/loftyleader',
+    child_games: '/child/home/games',
+
     // Parent - home (1st tab)
     parent_home: '/parent/home',
     parent_home_homework: '/parent/home/homework',

@@ -18,7 +18,7 @@ const ChangePlan = (props) => {
                 leftComponent={<NavigationBar.Item icon={<Anticon name='left' />} onPress={() => history.replace(RouteURL.parent_profile)} />}
                 centerComponent={<NavigationBar.Item title='Change your plan' />}
             />
-            
+
             <ScrollView>
                 <Text  style={{textAlign:'center'}} category='h6'>Your current plan</Text>
                 <View style={{margin: RFValue(30), padding:RFValue(20), borderRadius:RFValue(20), backgroundColor:'#fff', shadowColor:'#111', shadowOffset: {width:0, height: 4}, shadowOpacity: 0.2, shadowRadius:10, elevation:10}}>
@@ -33,7 +33,6 @@ const ChangePlan = (props) => {
                         </Col>
                     </Grid>
                 </View>
-
                 <Text style={{textAlign:'center'}} category='h6'> Change your plan </Text>
                 <View style={{margin: RFValue(30), marginVertical:RFValue(10), padding:RFValue(20), borderRadius:RFValue(20), backgroundColor:'#fff', shadowColor:'#111', shadowOffset: {width:0, height: 4}, shadowOpacity: 0.2, shadowRadius:10, elevation:10}}>
                     <Grid>

@@ -36,10 +36,8 @@ const TodayHomework = (props) => {
                 </View>
                 <View style={{padding: RFValue(30)}}>
                     <Button style={{marginVertical:10}} size='large' appearance='outline' status='warning'> Scan to submit the test </Button>
-                    
                     <Button size='large'  status='warning'> Upload worksheet / video </Button>
                 </View>
-                
             </ScrollView>
         </Layout>
     )

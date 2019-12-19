@@ -40,8 +40,7 @@ const RateUs = (props) => {
                 </Row>
                 <Row size={5}></Row>
             </Grid>
-            
-            
+
         </Layout>
         
     )
