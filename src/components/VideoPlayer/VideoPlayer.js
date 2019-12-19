@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
     controlBar: {
         position: 'absolute',
         bottom: 0,
-        height: RFValue(36),
+        height: RFValue(40),
         width: "100%",
         display: 'flex',
         flexDirection: 'row',
@@ -93,10 +93,10 @@ const VideoPlayer = (props) => {
 
 
             <View style={styles.controlBar}>
-                <TouchableOpacity activeOpacity={0.8} onPress={() => setPaused(!paused)} >
+                <TouchableOpacity activeOpacity={0.8} onPress={() => setPaused(!paused)} style={{padding:RFValue(10), paddingLeft:RFValue(20)}} >
                     {
-                        paused ? <TistoIcon name='play' size={RFValue(20)} style={{ padding: RFValue(10), color: "#fff" }} />
-                            : <TistoIcon name='pause' size={RFValue(20)} style={{ padding: RFValue(10), color: "#fff" }} />
+                        paused ? <TistoIcon name='play' size={RFValue(20)} style={{  color: "#fff" }} />
+                            : <TistoIcon name='pause' size={RFValue(20)} style={{  color: "#fff" }} />
                     }
                 </TouchableOpacity>
                 <Slider
