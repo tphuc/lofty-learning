@@ -3,6 +3,7 @@ import { TouchableOpacity, View, StyleSheet, ScrollView, Picker, Modal } from 'r
 import PT from 'prop-types';
 import { RFValue } from 'react-native-responsive-fontsize';
 import AntIcon from 'react-native-vector-icons/AntDesign';
+import Entypo from 'react-native-vector-icons/Entypo'
 import { Text } from 'react-native-ui-kitten';
 
 
@@ -10,9 +11,9 @@ import { Text } from 'react-native-ui-kitten';
 const styles = StyleSheet.create({
     baseContainer: {
         position: 'relative',
-        minWidth: RFValue(70),
+        minWidth: RFValue(100),
         minHeight: RFValue(30),
-        borderRadius: RFValue(15),
+        borderRadius: RFValue(25),
         elevation: 10,
         backgroundColor: "#fff",
         shadowColor: '#111',
@@ -22,19 +23,17 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: "center",
+        padding:RFValue(5),
     }
 })
-
-const DROPDOWN = {
-    WIDTH: 200
-}
 
 const CustomSelect = (props) => {
     const { selected, data, placeholder, onSelect, style, ...others } = props;
     const baseContainer = React.useRef()
     const dropdownContainer = React.useRef()
     const [toggleOptions, setToggleOptions] = useState(false);
-    const [dropdownContainerStyle, setDropdownStyle] = useState({})
+    const [dropdownContainerStyle, setDropdownStyle] = useState({});
+    
     const handleToggle = () => {
         baseContainer.current.measure((x, y, w, h, pX, pY) => {
             setDropdownStyle({
@@ -49,24 +48,24 @@ const CustomSelect = (props) => {
             });
             setToggleOptions(true)
         })
-
     }
 
     return (
         <>
-            <View style={{ margin: RFValue(5), }}>
+            <View style={{ margin: RFValue(5),  }}>
                 <TouchableOpacity
                     ref={baseContainer}
                     onPress={handleToggle}
                     style={{
                         ...styles.baseContainer,
-                        ...(toggleOptions ? { borderBottomLeftRadius: 0, borderBottomRightRadius: 0 } : {})
+                        ...(toggleOptions ? { borderBottomLeftRadius: 0, borderBottomRightRadius: 0 } : {}),
+                        ...style
                     }}>
-                    <View style={{ padding: RFValue(5) }}>
+                    <View style={{ padding: RFValue(5), paddingLeft:RFValue(10) }}>
                         <Text style={{ textAlign: "center", color: selected ? '#111' : '#aaa' }} category='h6'>{selected ? selected.label : placeholder}</Text>
                     </View>
                     <View>
-                        <AntIcon name={toggleOptions ? 'up' : 'down'} size={RFValue(18)} style={{ padding: RFValue(5) }} color='#888' />
+                        <Entypo name={toggleOptions ? 'chevron-up' : 'chevron-down'} size={RFValue(18)} style={{ padding: RFValue(5) }} color='#222' />
                     </View>
                 </TouchableOpacity>
 

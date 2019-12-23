@@ -10,7 +10,7 @@ import { Text, Button } from 'react-native-ui-kitten';
 const TodayHomework = (props) => {
     const history = useHistory();
     return (
-        <Layout animation='fadeIn'>
+        <Layout>
             <StatusBar barStyle='dark-content' backgroundColor='rgb(233, 200, 50)' />
             <Navigationbar colors={['rgb(233, 200, 50)', 'rgb(253, 137, 127)']}
                 leftComponent={<Navigationbar.Item icon={<AntIcon color='white' name='left' />} onPress={() => history.replace(RouteURL.parent_home)} />}

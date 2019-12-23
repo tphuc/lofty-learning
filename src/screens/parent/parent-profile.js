@@ -20,7 +20,7 @@ const Profile = (props) => {
         <>
             <Route exact path={RouteURL.parent_profile} render={() =>
                 <>
-                <Layout animation='slideInLeft'>
+                <Layout>
                     <StatusBar barStyle='dark-content' backgroundColor='#fff'></StatusBar>
 
                     <View style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row', padding: RFValue(10) }}>

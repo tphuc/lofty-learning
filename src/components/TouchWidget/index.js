@@ -9,7 +9,7 @@ const Widget = (props) => {
     const { widgetImg, ...others} = props
 
     return (
-        <Anim.View style={{margin:5, flex:1, borderRadius:10, ...others.style}} animation='zoomIn' >
+        <Anim.View style={{margin:5, flex:1, borderRadius:10, ...others.style}} >
             <Image style={{ position:'absolute', width:'100%', height:'100%', borderRadius:10}} resizeMode='cover' source={widgetImg}></Image>
             <TouchableOpacity activeOpacity={0.5}  style={{flex:1, padding:10 }} {...others}>
                 {props.children}

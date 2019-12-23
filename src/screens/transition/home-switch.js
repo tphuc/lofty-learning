@@ -13,7 +13,7 @@ const SwitchAccount = () => {
     const [modalParentGate, setModalParentGate] = React.useState(false)
     return (
         <>
-            <Anim.View style={{ flex: 1 }} animation='fadeIn'>
+            <Anim.View style={{ flex: 1 }}>
                 <ImageBackground style={{ width: "100%", height: "100%", position: 'absolute' }} resizeMode='cover' source={require('../../assets/images/switch-account-bg.png')} />
                 <Grid>
                     <Col style={{ display: "flex", justifyContent: 'center', alignItems: "center" }}>

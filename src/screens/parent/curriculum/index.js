@@ -148,7 +148,7 @@ const Curriculum = (props) => {
         <>
             <Route exact path={RouteURL.parent_curriculum} render={() =>
                 <>
-                    <Layout animation='fadeInLeft'>
+                    <Layout>
                         <StatusBar barStyle='dark-content' backgroundColor='rgb(229, 103, 85)' />
                         <Navigationbar colors={['rgb(229, 103, 85)', 'rgb(219, 23, 110)']}
                             leftComponent={<Navigationbar.Item icon={<AntIcon color='white' name='left' />} onPress={() => history.replace(RouteURL.parent_home)} />}

@@ -7,6 +7,7 @@ import { RFValue } from 'react-native-responsive-fontsize';
 import NavigationBar from '../../components/NavigationBar';
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import RouteURL from '../../components/RouteURL';
+import KidBackBtn from '../../components/KidBackBtn/KidBackBtn';
 
 const leaders = [
     {
@@ -24,6 +25,10 @@ const leaders = [
     {
         name: 'Kenny',
         img: require('../../assets/images/child/kenny.png')
+    },
+    {
+        name: 'Kenny',
+        img: require('../../assets/images/child/kenny.png')
     }
 ]
 
@@ -34,13 +39,11 @@ const LoftyLeader = (props) => {
         <>
 
             <ImageBackground style={{ position: 'absolute', width: '100%', height: '100%' }} source={require('../../assets/images/child/loftyleader-bg.png')} />
-            <NavigationBar
-                leftComponent={<NavigationBar.Item icon={<AntIcon name='left' color='#fff' />} onPress={() => history.push(RouteURL.child_home)} />}
-            />
-            <View style={{ flex: 1, flexDirection: "row", flexWrap: 'wrap', justifyContent: 'center', alignItems: "center" }}>
+            <KidBackBtn onPress={() => history.goBack()} />
+            <View style={{ flex: 1, flexDirection: "row", flexWrap: 'wrap', justifyContent: 'center', alignItems: "center", marginTop:RFValue(40) }}>
                 {
                     leaders.map((item, idx) =>
-                        <TouchableOpacity key={idx}>
+                        <TouchableOpacity key={idx} activeOpacity={0.8} style={{marginTop:RFValue(50)}}>
                             <ImageBackground style={{ width: RFValue(200), height: RFValue(100) }} resizeMode='contain' source={item.img} />
                         </TouchableOpacity>
                     )

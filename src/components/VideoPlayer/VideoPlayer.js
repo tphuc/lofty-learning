@@ -8,6 +8,7 @@ import TistoIcon from 'react-native-vector-icons/Fontisto';
 import AntIcon from 'react-native-vector-icons/AntDesign';
 import NavigationBar from '../NavigationBar';
 import { useHistory } from 'react-router-native';
+import Entypo from 'react-native-vector-icons/Entypo'
 
 
 
@@ -55,8 +56,6 @@ const VideoPlayer = (props) => {
         setPaused(false)
     }
 
-
-
     return (
         <>
             <Video
@@ -81,7 +80,7 @@ const VideoPlayer = (props) => {
                         leftComponent={<NavigationBar.Item
                             onPress={() => history.goBack()}
                             textStyle={{ color: '#fff' }}
-                            icon={<AntIcon name='left' color='#fff' />}
+                            icon={<Entypo name='chevron-left' color='#fff' size={RFValue(40)} />}
                             text="Unit 01 - Chapter 01/5"
                         />}
                     />

@@ -93,7 +93,7 @@ BottomNavItem.defaultProps = {
     textActiveStyle: {},
     containerStyle: {},
     containerActiveStyle: {},
-    animation: 'lightSpeedIn',
+    animation: null,
     active: false
 };
 
