@@ -6,7 +6,7 @@ import VideoPlayer from '../../../components/VideoPlayer';
 const StoryVideo = (props) => {
     return (
         <>
-            <VideoPlayer></VideoPlayer>
+            <VideoPlayer videoFile={require('../../../assets/video/demo.mov')}></VideoPlayer>
         </>
     )
 }

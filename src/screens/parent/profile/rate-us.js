@@ -16,7 +16,7 @@ import Layout from '../../../components/Layout';
 const RateUs = (props) => {
     const history = useHistory();
     return (
-        <Layout style={{flex:1}} animation='slideInUp'>
+        <Layout style={{flex:1}} >
 
             <NavigationBar 
                 leftComponent={<NavigationBar.Item icon={<AntIcon name='left' />} onPress={() => history.replace(RouteURL.parent_profile)} />}

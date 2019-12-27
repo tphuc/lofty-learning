@@ -14,7 +14,7 @@ import { Row, Col, Grid} from 'react-native-easy-grid';
 const Colors = (props) => {
     const history = useHistory();
     return (
-        <Layout animation='slideInUp'>
+        <Layout>
             <Navigationbar colors={['rgb(229, 103, 85)', 'rgb(219, 23, 110)']}
                 leftComponent={<Navigationbar.Item icon={<AntIcon color='white' name='left' />} onPress={() => history.replace(RouteURL.parent_curriculum)} />}
                 centerComponent={<Navigationbar.Item title='Colors' textStyle={{ color: 'white' }} />}

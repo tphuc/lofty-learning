@@ -12,6 +12,7 @@ import RouteURL from '../../components/RouteURL';
 import LoftyLeader from './lofty-leader';
 import Stories from './child-stories';
 import ChildFlascard from './child-flashcard';
+import ChildInteractive from './child-interactive';
 
 
 const Home = (props) => {
@@ -37,7 +38,7 @@ const Home = (props) => {
                     </Row>
                     <Row size={5}>
                         <Col size={3} style={{ paddingLeft: 30 }}>
-                            <Widget widgetImg={require('../../assets/images/yellow-widget.png')}>
+                            <Widget widgetImg={require('../../assets/images/yellow-widget.png')} onPress={() => history.push(RouteURL.child_interactions)}>
                                 <Grid>
                                     <Row size={2} style={{ display: 'flex', justifyContent: "center", alignItems: "center" }}>
                                         <Image style={{ position: 'absolute', height: '100%', width: '100%', top: 0, left: 0 }} resizeMode='contain' source={require('../../assets/images/video-holder.png')} />
@@ -78,6 +79,8 @@ const Home = (props) => {
         <Route path={RouteURL.child_stories} component={Stories}/>
         <Route path={RouteURL.child_flashcard} component={ChildFlascard} />
         <Route path={RouteURL.child_lotfyleader} component={LoftyLeader} />
+        <Route path={RouteURL.child_interactions} component={ChildInteractive} />
+        
     </>
 }
 
