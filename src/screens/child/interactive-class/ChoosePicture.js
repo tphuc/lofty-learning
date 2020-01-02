@@ -99,9 +99,7 @@ const ChoosePicture = (props) => {
                                                     if (item.rightAnswer) {
                                                         setRightPicture(item.img)
                                                     }
-                                                    
                                                     setAttemptedList([...AttemptedList, item.id])
-                                                    
                                                 }
 
                                             }}
@@ -109,15 +107,15 @@ const ChoosePicture = (props) => {
                                             <View style={{ width: Dimensions.get('window').width * 0.15, height: Dimensions.get('window').width * 0.15 }}>
                                                 <Image style={{ width: '100%', height: "100%", opacity: AttemptedList.includes(item.id) ? 0.5 : 1 }} resizeMode='contain' source={item.img} />
                                                 {
-                                                    AttemptedList.includes(item.id) && !rightPicture && 
+                                                    AttemptedList.includes(item.id) && !item.rightAnswer && 
                                                     <View style={{ position: "absolute", width: "100%", height: "100%", justifyContent: "center", alignItems: "center" }}>
                                                         <Entypo name='cross' size={RFValue(40)} color='rgb(247, 98, 94)' />
                                                     </View>
                                                 }
                                                 {
-                                                    AttemptedList.includes(item.id) && !rightPicture && 
+                                                    AttemptedList.includes(item.id) && item.rightAnswer && 
                                                     <View style={{ position: "absolute", width: "100%", height: "100%", justifyContent: "center", alignItems: "center" }}>
-                                                        <Entypo name='check' size={RFValue(40)} color='rgb(247, 98, 94)' />
+                                                        <Entypo name='check' size={RFValue(40)} color='rgb(94, 200, 94)' />
                                                     </View>
                                                 }
                                             </View>

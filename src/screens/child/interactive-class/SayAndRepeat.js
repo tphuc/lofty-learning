@@ -60,7 +60,7 @@ const SayAndRepeat = (props) => {
     const [AttemptedList, setAttemptedList] = React.useState([]);
     const [soundDisable, setSoundDisable] = React.useState(false);
     const [voiceText, setVoiceText] = React.useState(null);
-    const [soundTestStatus, setSoundTestStatus] = React.useState(null);
+    const [soundTestStatus, setSoundTestStatus] = React.useState('');
 
 
     const [voiceWaveData, setVoiceWaveData] = React.useState([]);
@@ -73,7 +73,6 @@ const SayAndRepeat = (props) => {
         Voice.onSpeechRecognized = voiceRecognized;
         Voice.onSpeechResults = voiceResult;
         setVoiceWaveData(SoundHelper.soundTextToData('apple'))
-        console.log(voiceWaveData)
         setVoiceResultWaveData([])
         return () => {
             Voice.destroy().then(Voice.removeAllListeners);
@@ -92,6 +91,12 @@ const SayAndRepeat = (props) => {
         setVoiceText(e.value[0]) ;
         const similarity = SoundHelper.stringSimilarity('apple', e.value[0].toLowerCase())
         const resultWave = SoundHelper.generateDataBySimilarPercentage(voiceWaveData, similarity);
+        if(similarity > 0.9)
+            setSoundTestStatus('Correct!')
+        else if(similarity > 0.5)
+            setSoundTestStatus('Almost there!')
+        else
+            setSoundTestStatus('Incorrect !')
 
         setVoiceResultWaveData(resultWave)
     }
@@ -173,7 +178,7 @@ const SayAndRepeat = (props) => {
                                 </BarChart>
                             </View>
                             <View>
-                                {/* <Text style={{textAlign:"center"}}> Incorrect !</Text> */}
+                                <Text style={{textAlign:"center"}}>{soundTestStatus}</Text>
                             </View>
                             <View style={{ flex: 1 }}>
                                 <TouchableOpacity style={{ flex: 1 }} activeOpacity={0.6}
