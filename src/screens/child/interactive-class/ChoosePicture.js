@@ -8,13 +8,9 @@ import { RFValue } from 'react-native-responsive-fontsize';
 import { Text } from 'react-native-ui-kitten';
 import Draggable from 'react-native-draggable';
 import { useHistory } from 'react-router-native';
-import testAudio from '../../../assets/audio/bear.mp3'
-// import {
-//     Player,
-//     Recorder,
-//     MediaStates
-// } from '@react-native-community/audio-toolkit';
-import Sound from 'react-native-sound';
+import {
+    Player,
+} from '@react-native-community/audio-toolkit';
 
 const styles = StyleSheet.create({
     baseContainer: {
@@ -52,6 +48,7 @@ const ChoosePicture = (props) => {
     const [targetLocation, setTargetLocation] = React.useState(null);
     const [rightPicture, setRightPicture] = React.useState(null);
     const [AttemptedList, setAttemptedList] = React.useState([]);
+    const [soundDisable, setSoundDisable] = React.useState(false)
 
     const handleLayoutImgHolder = (e) => {
         const { width, height, x, y } = e.nativeEvent.layout;
@@ -59,8 +56,12 @@ const ChoosePicture = (props) => {
     }
 
     const playAudio = () => {
-        // Sound.setCategory('Playback');
-        // var audio = Sound(testAudio, err => console.log('wtf?'))
+       setSoundDisable(true)
+       var audio = new Player('https://raw.githubusercontent.com/tphuc/lofty-learning/dev/ios/src/assets/audio/apple.mp3');
+       audio.play().on('ended', () => {
+           setSoundDisable(false)
+       })
+
     }
 
     return (
@@ -73,7 +74,7 @@ const ChoosePicture = (props) => {
                     <View style={{ flex: 1, padding: RFValue(40), justifyContent: "center", alignItems: 'center' }}>
                         <View onLayout={handleLayoutImgHolder} style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: 'center', alignItems: "center", height: "100%", width: "100%", borderRadius: 9999, backgroundColor: 'rgb(121,65,0)', borderWidth: RFValue(20), borderColor: "#fff" }}>
                             <Image style={{ height: "100%" }} resizeMode='contain' source={rightPicture ? rightPicture : require('../../../assets/images/child/interactive/question.png')} />
-                            <TouchableOpacity style={{ position: "absolute", bottom: 0, left: 10, width: RFValue(80), height: RFValue(80) }} activeOpacity={0.8} onPress={() => playAudio()}>
+                            <TouchableOpacity disabled={soundDisable} style={{ position: "absolute", bottom: 0, left: 10, width: RFValue(80), height: RFValue(80) }} activeOpacity={0.8} onPress={() => playAudio()}>
                                 <Image style={{ width: "100%", height: "100%" }} source={require('../../../assets/images/child/flashcard/speaker.png')} />
                             </TouchableOpacity>
                         </View>
@@ -98,9 +99,9 @@ const ChoosePicture = (props) => {
                                                     if (item.rightAnswer) {
                                                         setRightPicture(item.img)
                                                     }
-                                                    else {
-                                                        setAttemptedList([...AttemptedList, item.id])
-                                                    }
+                                                    
+                                                    setAttemptedList([...AttemptedList, item.id])
+                                                    
                                                 }
 
                                             }}
@@ -108,9 +109,15 @@ const ChoosePicture = (props) => {
                                             <View style={{ width: Dimensions.get('window').width * 0.15, height: Dimensions.get('window').width * 0.15 }}>
                                                 <Image style={{ width: '100%', height: "100%", opacity: AttemptedList.includes(item.id) ? 0.5 : 1 }} resizeMode='contain' source={item.img} />
                                                 {
-                                                    AttemptedList.includes(item.id) &&
+                                                    AttemptedList.includes(item.id) && !rightPicture && 
                                                     <View style={{ position: "absolute", width: "100%", height: "100%", justifyContent: "center", alignItems: "center" }}>
                                                         <Entypo name='cross' size={RFValue(40)} color='rgb(247, 98, 94)' />
+                                                    </View>
+                                                }
+                                                {
+                                                    AttemptedList.includes(item.id) && !rightPicture && 
+                                                    <View style={{ position: "absolute", width: "100%", height: "100%", justifyContent: "center", alignItems: "center" }}>
+                                                        <Entypo name='check' size={RFValue(40)} color='rgb(247, 98, 94)' />
                                                     </View>
                                                 }
                                             </View>
