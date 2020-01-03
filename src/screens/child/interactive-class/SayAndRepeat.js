@@ -91,6 +91,7 @@ const SayAndRepeat = (props) => {
         setVoiceText(e.value[0]) ;
         const similarity = SoundHelper.stringSimilarity('apple', e.value[0].toLowerCase())
         const resultWave = SoundHelper.generateDataBySimilarPercentage(voiceWaveData, similarity);
+        
         if(similarity > 0.9)
             setSoundTestStatus('Correct!')
         else if(similarity > 0.5)
@@ -168,7 +169,7 @@ const SayAndRepeat = (props) => {
                                 >
                                 </BarChart>
                                 <BarChart style={{position:"absolute",width:"100%", height: '100%', backgroundColor:"transparent", padding: RFValue(15), borderRadius: RFValue(20), borderWidth: RFValue(6), borderColor:"rgb(230, 88, 56)" }} data={voiceResultWaveData} 
-                                    svg={{ fill:"rgba(185,24,255, 0.6)"  }} 
+                                    svg={{ fill:"#ffeb3b"  }} 
                                     spacingInner={0.3}
                                     spacingOuter={0.8}
                                     contentInset={{ top: 0, bottom: 0, let:40 }}
@@ -177,8 +178,8 @@ const SayAndRepeat = (props) => {
                                 >
                                 </BarChart>
                             </View>
-                            <View>
-                                <Text style={{textAlign:"center"}}>{soundTestStatus}</Text>
+                            <View style={{flex:0.4}}>
+                                <Text style={{textAlign:"center"}} category='h5'>{soundTestStatus}</Text>
                             </View>
                             <View style={{ flex: 1 }}>
                                 <TouchableOpacity style={{ flex: 1 }} activeOpacity={0.6}

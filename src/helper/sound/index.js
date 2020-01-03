@@ -14,8 +14,8 @@ const Sound = {
     },
     generateDataBySimilarPercentage: (data, percentage) => {
         console.log(percentage)
-        const newData = data.map(n => n + _.random(10, 20, false) * (Math.random() - 0.5 ? 1 : -1) * (Math.random() <= percentage ? 0 : 1) )
-
+        const newData = data.map(n => n + _.random(10, 20, false) * (Math.random() - 0.5 ? 1 : -1) * (Math.random() >= percentage ? 1 : 0))
+        console.log(newData)
         return newData
     }
 }
