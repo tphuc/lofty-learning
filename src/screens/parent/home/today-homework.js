@@ -11,8 +11,8 @@ const TodayHomework = (props) => {
     const history = useHistory();
     return (
         <Layout>
-            <StatusBar barStyle='dark-content' backgroundColor='rgb(233, 200, 50)' />
-            <Navigationbar colors={['rgb(233, 200, 50)', 'rgb(253, 137, 127)']}
+            <StatusBar barStyle='dark-content' backgroundColor='rgb(0,193,255)' />
+            <Navigationbar colors={['rgb(0,193,255)', 'rgb(0,193,255)']}
                 leftComponent={<Navigationbar.Item icon={<AntIcon color='white' name='left' />} onPress={() => history.replace(RouteURL.parent_home)} />}
                 centerComponent={<Navigationbar.Item title="Today's homework" textStyle={{ color: 'white' }} />}
             />
@@ -35,8 +35,8 @@ const TodayHomework = (props) => {
                     </TouchableOpacity>
                 </View>
                 <View style={{padding: RFValue(30)}}>
-                    <Button style={{marginVertical:10}} size='large' appearance='outline' status='warning'> Scan to submit the test </Button>
-                    <Button size='large'  status='warning'> Upload worksheet / video </Button>
+                    <Button style={{marginVertical:10,}} size='large' appearance='outline' status='info' > Scan to submit the test </Button>
+                    <Button size='large' status='info' > Upload worksheet / video </Button>
                 </View>
             </ScrollView>
         </Layout>

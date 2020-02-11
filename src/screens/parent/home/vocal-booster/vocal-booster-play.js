@@ -16,7 +16,7 @@ const VocalBoosterPlay = (props) => {
         <Layout style={{ backgroundColor: "rgb(241, 253, 253)" }}>
             <StatusBar backgroundColor='rgb(241, 253, 253)' barStyle='dark-content' />
             <NavigationBar
-                colors={['rgb(51, 208, 194)', 'rgb(0, 154, 124)']}
+                colors={['rgb(0,193,255)', 'rgb(0,193,255)']}
                 leftComponent={<NavigationBar.Item icon={<AntIcon name='left' style={{ color: '#fff' }} />} onPress={() => history.replace(RouteURL.parent_home_vocalbooster)} />}
                 centerComponent={<NavigationBar.Item textStyle={{ color: '#fff' }} title='Vocal booster' />}
             />

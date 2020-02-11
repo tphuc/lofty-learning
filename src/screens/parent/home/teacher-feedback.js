@@ -64,7 +64,7 @@ const Homework = (props) => {
                     <Text style={{ color: '#555' }}>{date}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={{ paddingVertical: RFValue(10) }}>
-                    <Text style={{ color: downloaded ? '#aaa' : 'rgb(151, 93, 242)' }}> <AntIcon size={RFValue(20)} name={downloaded ? 'check' : 'download'} />{downloaded ? ' Downloaded' : ' Download'}</Text>
+                    <Text style={{ color: downloaded ? '#aaa' : 'rgb(0,193,255)' }}> <AntIcon size={RFValue(20)} name={downloaded ? 'check' : 'download'} />{downloaded ? ' Downloaded' : ' Download'}</Text>
                 </TouchableOpacity>
             </Col>
         </Row>
@@ -77,8 +77,8 @@ const TeacherFeedback = (props) => {
         <>
             <Route exact path={RouteURL.parent_home_feedback} render={() =>
                 <Layout>
-                    <StatusBar barStyle='dark-content' backgroundColor='rgb(151, 93, 242)' />
-                    <Navigationbar colors={['rgb(151, 93, 242)', 'rgb(74, 28, 128)']}
+                    <StatusBar barStyle='dark-content' backgroundColor='rgb(0,193,255)' />
+                    <Navigationbar colors={['rgb(0,193,255)', 'rgb(0,193,255)']}
                         leftComponent={<Navigationbar.Item icon={<AntIcon color='white' name='left' />} onPress={() => history.replace(RouteURL.parent_home)} />}
                         centerComponent={<Navigationbar.Item title="Teacher's feedback" textStyle={{ color: 'white' }} />}
                     />

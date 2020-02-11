@@ -3,6 +3,8 @@ import { RFValue } from 'react-native-responsive-fontsize';
 
 export default kaktusTheme = {
     ...light,
+    "color-info-default": 'rgb(0,193,255)',
+    "color-warning-default": 'rgb(254, 228, 71)',
     Lightning: {
     },
     KaktusTheme: {

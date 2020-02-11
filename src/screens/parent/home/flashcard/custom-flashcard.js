@@ -86,7 +86,7 @@ const CustomFlashcard = (props) => {
                 shadowRadius: 10,
                 padding: RFValue(5),
                 borderWidth: selected[id] ? 3 : 0,
-                borderColor: 'rgb(79, 97, 248)'
+                borderColor: 'rgb(0,193,255)'
             }}>
             <Image style={{ width: '100%', height: '100%' }} resizeMode='contain' source={img} />
         </TouchableOpacity>
@@ -100,7 +100,7 @@ const CustomFlashcard = (props) => {
         <Layout>
             <StatusBar barStyle='dark-content' ></StatusBar>
             <NavigationBar
-                colors={['rgb(79, 97, 248)', 'rgb(0, 14, 128)']}
+                colors={['rgb(0,193,255)', 'rgb(0,193,255)']}
                 leftComponent={<NavigationBar.Item onPress={() => history.replace(RouteURL.parent_home_flashcard)} icon={<AntIcon name='left' style={{ color: "#fff" }} />} />}
                 centerComponent={<NavigationBar.Item title='Flashcards customize' textStyle={{ color: '#fff' }} />}
             />

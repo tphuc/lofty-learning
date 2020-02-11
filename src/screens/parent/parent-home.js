@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StatusBar, ScrollView } from 'react-native';
+import { View, StatusBar, ScrollView, Image, StyleSheet } from 'react-native';
 import * as Anim from 'react-native-animatable';
 import { Grid, Row, Col } from 'react-native-easy-grid';
 import { useHistory, Route } from 'react-router-native';
@@ -8,7 +8,7 @@ import FAIcon from 'react-native-vector-icons/FontAwesome5';
 import Entypo from 'react-native-vector-icons/Entypo';
 import MatIcon from 'react-native-vector-icons/MaterialIcons'
 import { RFValue } from 'react-native-responsive-fontsize';
-import { Avatar, Text, Button } from 'react-native-ui-kitten';
+import { Avatar, Text, Button, ThemeProvider } from 'react-native-ui-kitten';
 import Widget from '../../components/TouchWidget';
 import RouteURL from '../../components/RouteURL'
 import ModalContainer from '../../components/Modal';
@@ -16,9 +16,20 @@ import Orientation from 'react-native-orientation-locker';
 import { TodayHomework, TeacherFeedback, Flashcard, VocalBooster, ParentInvitation  } from './home';
 
 
+const styles = StyleSheet.create({
+    pane:{
+        shadowOffset:{  width: 0,  height: 10,  },
+        shadowColor: '#111',
+        shadowOpacity: 0.4,
+        elevation: 20,
+        margin:RFValue(10)
+    }
+})
 
 
-const ParentHome = () => {
+
+
+const ParentHome = (props) => {
     const history = useHistory();
     React.useEffect(() => {
         Orientation.lockToPortrait()
@@ -56,54 +67,73 @@ const ParentHome = () => {
                             <Avatar source={require('../../assets/images/edward-parent-ava.png')}></Avatar>
                         </View>
                         <ScrollView>
-                            <Grid style={{ minHeight: 700, paddingBottom: 20 }}>
+                            <Grid style={{ minHeight: 700, paddingVertical:30 }}>
                                 <Row size={10}>
                                     <Col size={2}>
-                                        <Row size={8}>
-                                            <Widget widgetImg={require('../../assets/images/hw.png')} onPress={() => history.push(RouteURL.parent_home_homework)} >
-                                                <Text style={{ padding: 20, color: '#fff' }} category='h5'> Today's Homework </Text>
+                                        <Row size={5}>
+                                            <Widget style={{backgroundColor:'rgb(254, 213, 1)', borderColor: '#525048', ...styles.pane }}  >
+                                                <Text style={{ paddingHorizontal: 10, color: '#fff' }} category='h5'> Today's Tips </Text>
+                                                <Image style={{position:"absolute", left: '40%', width: '100%', height:"100%", opacity: 0.3}} resizeMode='contain' source={require('../../assets/images/parent/underlay-tip.png')} />
+                                            </Widget>
+                                            
+                                        </Row>
+                                        <Row size={1}>
+                                            <Widget
+                                                 style={{backgroundColor:'rgb(0, 193, 255)', borderColor: '#525048', ...styles.pane }}
+                                                 //  widgetImg={require('../../assets/images/hw.png')} 
+                                                 onPress={() => history.push(RouteURL.parent_home_homework)} >
+                                                <Text style={{ padding: 10, color: '#fff' }} category='h5'>Today's Homework </Text>
+                                                <Image style={{position:"absolute", left: '40%', width: '100%', height:"100%"}} resizeMode='contain' source={require('../../assets/images/parent/underlay-homework.png')} />
                                             </Widget>
                                         </Row>
                                         <Row size={1}>
-                                            <Widget widgetImg={require('../../assets/images/today-tip.png')}>
-                                                <Text style={{ paddingHorizontal: 20, color: '#fff' }} category='h5'> Today's Tips </Text>
-                                            </Widget>
-                                        </Row>
-                                        <Row size={8}>
-                                            <Widget widgetImg={require('../../assets/images/teacher-feedback.png')} onPress={() => history.push(RouteURL.parent_home_feedback)}>
-                                                <Text style={{ padding: 20, color: '#fff' }} category='h5'>Teacher's Feedback </Text>
+                                            <Widget
+                                                style={{backgroundColor:'rgb(0, 193, 255)', borderColor: '#525048', ...styles.pane }}    
+                                                // widgetImg={require('../../assets/images/teacher-feedback.png')} 
+                                                onPress={() => history.push(RouteURL.parent_home_feedback)}
+                                                >
+                                                <Text style={{ padding: 10, color: '#fff' }} category='h5'>Teacher's Feedback </Text>
+                                                <Image style={{position:"absolute", left: '40%', width: '100%', height:"100%"}} resizeMode='contain' source={require('../../assets/images/parent/underlay-feedback.png')} />
                                             </Widget>
                                         </Row>
                                     </Col>
 
                                     <Col size={1}>
                                         <Row size={2}>
-                                            <Widget widgetImg={require('../../assets/images/vocal-boost.png')} onPress={() => history.replace(RouteURL.parent_home_vocalbooster)}>
+                                            <Widget 
+                                                style={{backgroundColor:'rgb(0, 193, 255)', borderColor: '#525048', ...styles.pane }} 
+            
+                                                onPress={() => history.replace(RouteURL.parent_home_vocalbooster)}>
                                                 <Text style={{ padding: 0, color: '#fff' }} category='h6'>Parent vocal (booster) </Text>
+                                                <Image style={{position:"absolute", left: '40%', width: '100%', height:"100%"}} resizeMode='contain' source={require('../../assets/images/parent/underlay-vocabulary.png')} />
                                             </Widget>
                                         </Row>
                                         <Row size={2}>
-                                            <Widget widgetImg={require('../../assets/images/custom-flashcard.png')} onPress={() => history.push(RouteURL.parent_home_flashcard)}>
+                                            <Widget 
+                                                style={{backgroundColor:'rgb(0, 193, 255)', borderColor: '#525048', ...styles.pane }} 
+                                                // widgetImg={require('../../assets/images/custom-flashcard.png')} 
+                                                onPress={() => history.push(RouteURL.parent_home_flashcard)}>
                                                 <Text style={{ padding: 0, color: '#fff' }} category='h6'>Custom flashcard</Text>
+                                                <Image style={{position:"absolute", left: '40%', width: '100%', height:"100%"}} resizeMode='contain' source={require('../../assets/images/parent/underlay-flashcard.png')} />
                                             </Widget>
                                         </Row>
                                         <Row size={3}>
-                                            <Widget widgetImg={require('../../assets/images/curriculum.png')} onPress={() => history.replace(RouteURL.parent_curriculum)}>
-                                                <Text style={{ paddingVertical: 20, color: '#fff' }} category='h6'>Curriculum</Text>
+                                            <Widget 
+                                                style={{backgroundColor:'rgb(0, 193, 255)', borderColor: '#525048', ...styles.pane }} 
+                                                // widgetImg={require('../../assets/images/invite-friend.png')} 
+                                                onPress={() => history.replace(RouteURL.parent_home_invitation)}>
+                                                <Text style={{  paddingVertical: 0, color: '#fff' }} category='h6'>Invite a friend</Text>
                                             </Widget>
                                         </Row>
                                     </Col>
                                 </Row>
 
                                 <Row size={1}>
-                                    <Widget widgetImg={require('../../assets/images/invite-friend.png')} onPress={() => history.replace(RouteURL.parent_home_invitation)}>
-                                        <Text style={{ paddingHorizontal: 20, paddingVertical: 0, color: '#fff' }} category='h6'>Invite a friend</Text>
-                                    </Widget>
+                                    
                                 </Row>
 
                             </Grid>
                         </ScrollView>
-
                     </View>
                     <ModalContainer position='bottom' visible={modalToKidArea} onPressClose={() => setModalToKidArea(false)}>
                         <View style={{ padding: 20, paddingTop: 40, }}>

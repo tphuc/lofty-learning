@@ -68,17 +68,17 @@ const ParentVocalBooster = (props) => {
         <>
             <Route exact path={RouteURL.parent_home_vocalbooster} render={() => 
                 <Layout>
-                    <StatusBar barStyle='dark-content' backgroundColor='rgb(51, 208, 194)' />
+                    <StatusBar barStyle='dark-content' backgroundColor='rgb(0,193,255)' />
                     <NavigationBar
-                        colors={['rgb(51, 208, 194)', 'rgb(0, 154, 124)']}
+                        colors={['rgb(0,193,255)', 'rgb(0,193,255)']}
                         leftComponent={<NavigationBar.Item icon={<AntIcon name='left' style={{color:'#fff'}} />} onPress={() => history.replace(RouteURL.parent_home)} />}
                         centerComponent={<NavigationBar.Item textStyle={{color:'#fff'}} title='Vocal booster' />}
                     />
                     <ScrollView>
-                        <View style={{width:'100%', height:RFValue(250)}}>
-                            <ImageBackground style={{width:'100%', height:'100%'}} resizeMode='cover' source={require('../../../assets/images/parent/flashcard/week-flashcard.png')} >
+                        <View style={{width:'100%', height:RFValue(250),  borderRadius:RFValue(20)}}>
+                            <ImageBackground style={{width:'100%', height:'100%'}} resizeMode='contain' source={require('../../../assets/images/parent/flashcard/week-flashcard.png')} >
                                 <View style={{position:"absolute", paddingLeft: '10%', paddingTop: '20%', paddingRight:'45%'}}>
-                                    <Text category='h4' style={{color:'#fff'}}>This week's flash cards </Text>
+                                    <Text category='h2' style={{color:'#fff'}}>{"This week's\nflash cards "}</Text>
                                 </View>
                             </ImageBackground>
                         </View>

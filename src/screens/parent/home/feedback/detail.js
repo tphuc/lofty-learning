@@ -18,7 +18,7 @@ const Detail = (props) => {
     const { data } = props
     return (
         <Layout>
-            <Navigationbar colors={['rgb(151, 93, 242)', 'rgb(74, 28, 128)']}
+            <Navigationbar colors={['rgb(0,193,255)', 'rgb(0,193,255)']}
                 leftComponent={<Navigationbar.Item icon={<AntIcon style={{color:'#fff'}} name='left' onPress={() => history.push(RouteURL.parent_home_feedback) } />} />}
                 centerComponent={<Navigationbar.Item textStyle={{color:'#fff'}} title={data.name} />}
             />

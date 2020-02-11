@@ -12,7 +12,7 @@ import {
   Platform
 } from 'react-native';
 import theme from './src/components/Theming'
-import { ApplicationProvider, Layout, Text, ThemeProvider } from 'react-native-ui-kitten';
+import { ApplicationProvider, Layout, Text, ThemeProvider} from 'react-native-ui-kitten';
 import {default as customMappingAndroid}  from './custom-mapping.android.json';
 import {default as customMappingIos} from './custom-mapping.ios.json';
 import IndexRouting from './src/screens/';

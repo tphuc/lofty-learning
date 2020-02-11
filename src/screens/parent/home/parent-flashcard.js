@@ -37,7 +37,11 @@ const Flashcard = (props) => {
         const windowWidth = Dimensions.get('window').width
         return (
             <View style={{ position: "relative", width: windowWidth * 0.46, height: RFValue(220), margin: windowWidth * 0.02 }}>
-                <Image style={{ width: "100%", height: '100%' }} resizeMode='contain' source={flashcard.imageHolder} />
+                {
+                    flashcard.collection !== CUSTOM ?
+                    <Image style={{ width: "100%", height: '100%' }} resizeMode='contain' source={flashcard.imageHolder} />: 
+                    <View style={{width:'100%', height:'100%', backgroundColor:'rgb(0,193,255)', borderRadius:RFValue(20), padding:RFValue(5)}}></View>
+                }
                 {
                     flashcard.collection !== CUSTOM ?
                         <TouchableOpacity activeOpacity={0.8} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', position: "absolute", bottom: 0, height: RFValue(60), width: '100%', backgroundColor: 'rgba(255,255,255,0.6)', }}>
@@ -57,9 +61,9 @@ const Flashcard = (props) => {
         <>
             <Route exact path={RouteURL.parent_home_flashcard} render={() =>
                 <Layout>
-                    <StatusBar barStyle='dark-content' backgroundColor='rgb(79, 97, 248)' />
+                    <StatusBar barStyle='dark-content' backgroundColor='rgb(0,193,255)' />
                     <NavigationBar
-                        colors={['rgb(79, 97, 248)', 'rgb(0, 14, 128)']}
+                        colors={['rgb(0,193,255)', 'rgb(0,193,255)']}
                         leftComponent={<NavigationBar.Item onPress={() => history.replace(RouteURL.parent_home)} icon={<AntIcon name='left' style={{ color: "#fff" }} />} />}
                         centerComponent={<NavigationBar.Item title='Flashcards' textStyle={{ color: '#fff' }} />}
                     />

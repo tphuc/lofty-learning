@@ -15,7 +15,7 @@ const Colors = (props) => {
     const history = useHistory();
     return (
         <Layout>
-            <Navigationbar colors={['rgb(229, 103, 85)', 'rgb(219, 23, 110)']}
+            <Navigationbar colors={['rgb(0,193,255)', 'rgb(0,193,255)']}
                 leftComponent={<Navigationbar.Item icon={<AntIcon color='white' name='left' />} onPress={() => history.replace(RouteURL.parent_curriculum)} />}
                 centerComponent={<Navigationbar.Item title='Colors' textStyle={{ color: 'white' }} />}
             />
