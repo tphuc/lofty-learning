@@ -75,7 +75,6 @@ const ParentHome = (props) => {
                                                 <Text style={{ paddingHorizontal: 10, color: '#fff' }} category='h5'> Today's Tips </Text>
                                                 <Image style={{position:"absolute", left: '40%', width: '100%', height:"100%", opacity: 0.3}} resizeMode='contain' source={require('../../assets/images/parent/underlay-tip.png')} />
                                             </Widget>
-                                            
                                         </Row>
                                         <Row size={1}>
                                             <Widget
@@ -129,7 +128,7 @@ const ParentHome = (props) => {
                                 </Row>
 
                                 <Row size={1}>
-                                    
+
                                 </Row>
 
                             </Grid>

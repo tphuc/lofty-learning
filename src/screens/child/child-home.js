@@ -13,6 +13,7 @@ import LoftyLeader from './lofty-leader';
 import Stories from './child-stories';
 import ChildFlascard from './child-flashcard';
 import ChildInteractive from './child-interactive';
+import GameSwitch from './games/game-switcher';
 
 
 const Home = (props) => {
@@ -58,7 +59,7 @@ const Home = (props) => {
                             <Widget widgetImg={require('../../assets/images/stories.png')} onPress={() => history.push(RouteURL.child_stories)}>
                                 <Text style={{ color: "white" }} category='h4'>Stories</Text>
                             </Widget>
-                            <Widget widgetImg={require('../../assets/images/games.png')}>
+                            <Widget widgetImg={require('../../assets/images/games.png')} onPress={() => history.push(RouteURL.child_games)}>
                                 <Text style={{ color: "white" }} category='h4'>Games</Text>
                             </Widget>
                         </Col>
@@ -80,6 +81,7 @@ const Home = (props) => {
         <Route path={RouteURL.child_flashcard} component={ChildFlascard} />
         <Route path={RouteURL.child_lotfyleader} component={LoftyLeader} />
         <Route path={RouteURL.child_interactions} component={ChildInteractive} />
+        <Route path={RouteURL.child_games} component={GameSwitch} />
         
     </>
 }
