@@ -16,7 +16,7 @@ const CraneGame = () => {
     const history = useHistory()
     return <GameBoardLabel>
         <Image style={{ position: "absolute", top: 0, width: RFValue(300), height: RFValue(150) }} resizeMode='contain' source={require('../../../assets/images/child/games/crane.png')} />
-        <Button style={{ position: "absolute", bottom: RFValue(-20) }} size='large' status='danger'>
+        <Button style={{ position: "absolute", bottom: RFValue(-20), borderColor:'#fff', borderWidth:3, borderRadius: 999 }} size='large' status='danger'>
             Crane Game
         </Button>
     </GameBoardLabel>
@@ -30,18 +30,20 @@ const MemoryCard = () => {
                 <View style={{ flex: 1, backgroundColor: "rgb(254,213,1)", marginVertical: RFValue(10), marginLeft: RFValue(40), borderRadius: 10, justifyContent:"center", alignItems:'center' }}>
                     <Text category='h5' >?</Text>
                 </View>
-                <View style={{ flex: 1, backgroundColor: "#fff", marginVertical: RFValue(10), marginLeft: RFValue(40), borderRadius: 10 }}>
+                <View style={{ flex: 1, backgroundColor: "#fff", marginVertical: RFValue(10), marginLeft: RFValue(40), borderRadius: 10, justifyContent:"center", alignItems:"center" }}>
+                    <Image style={{ height:'100%'}} resizeMode='contain' source={require('../../../assets/images/child/games/smiley.png')}></Image>
                 </View>
             </View>
             <View style={{ flex: 1, margin: RFPercentage(2) }}>
-                <View style={{ flex: 1, backgroundColor: "#fff", marginVertical:RFValue(10), marginRight: RFValue(40), borderRadius: 10 }}>
+                <View style={{ flex: 1, backgroundColor: "#fff", marginVertical:RFValue(10), marginRight: RFValue(40), borderRadius: 10, justifyContent:"center", alignItems:"center" }}>
+                <Image style={{ height:'100%'}} resizeMode='contain' source={require('../../../assets/images/child/games/smiley.png')}></Image>
                 </View>
                 <View style={{ flex: 1, backgroundColor: "rgb(254,213,1)", marginVertical:RFValue(10), marginRight: RFValue(40), borderRadius: 10, justifyContent:"center", alignItems:'center' }}>
-                <Text category='h5' >?</Text>
+                    <Text category='h5' >?</Text>
                 </View>
             </View>
         </View>
-        <Button onPress={() => history.push(RouteURL.child_games+'/memorycards')} style={{ position: "absolute", bottom: RFValue(-20) }} size='large' status='danger'>
+        <Button onPress={() => history.push(RouteURL.child_games+'/memorycards')} style={{ position: "absolute", bottom: RFValue(-20),  borderColor:'#fff', borderWidth:3, borderRadius: 999  }} size='large' status='danger'>
             Memory Game
         </Button>
     </GameBoardLabel>

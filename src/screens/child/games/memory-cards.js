@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 import KidBackBtn from '../../../components/KidBackBtn/KidBackBtn';
-import { ImageBackground, View, TouchableOpacity, Image } from 'react-native';
+import { ImageBackground, View, TouchableOpacity, Image, Dimensions } from 'react-native';
 import { Text } from 'react-native-ui-kitten'
 import { RFValue } from 'react-native-responsive-fontsize';
 import { useHistory } from 'react-router-native';
+import LG from 'react-native-linear-gradient'
 
 
-
+const getRandomRotate = () => {
+    return rotation = 10 + (Math.random() * 20) * (Math.random() - 0.5 > 0 ? 1 : -1) 
+}
 
 const Card = (props) => {
-    const { open, value, img, ...others } = props;
-    return <TouchableOpacity activeOpacity={0.9} style={{ margin:RFValue(10), justifyContent:"center", alignItems:"center", width:RFValue(100), borderRadius:RFValue(10), height:RFValue(100), backgroundColor:"#B2FBFF", transform: [{rotate: `${10 + value*2}deg`}] }} {...others}>
-        {open ? <Image style={{width:"100%", height:"100%", borderRadius:RFValue(10)}} resizeMode='cover' source={img}/> : <Text category='h4'>?</Text> }
+    const { open, value, img, rotation, ...others } = props;
+    return <TouchableOpacity activeOpacity={0.9} style={{ marginHorizontal:RFValue(5),  width: Dimensions.get('window').width * 0.16, borderRadius:RFValue(10), height:Dimensions.get('window').width * 0.16,  transform: [{rotate: `${rotation}deg`}], elevation: 5, shadowColor:'#aaa', shadowOffset:{width: 2, height: 2}, shadowRadius: 10, shadowOpacity:0.5 }} {...others}>
+        {open ? <Image style={{width:"100%", height:"100%", borderRadius:RFValue(10)}} resizeMode='cover' source={img}/> : 
+        <LG colors={['#B2FBFF', '#00C9FC']} style={{flex:1, width:"100%", height:"100%", borderRadius:RFValue(10), justifyContent:"center", alignItems:"center",}}>
+            <Text category='h4'>?</Text>
+        </LG> }
     </TouchableOpacity>
 }
 
@@ -22,37 +28,45 @@ const GameMemoryCards = (props) => {
     const [data, setData] = React.useState([
         {
             value: 1,
-            img: {uri: 'https://i.pinimg.com/564x/49/20/c7/4920c76a9c6e3fe8a1d8a12f1c565158.jpg'}
+            img: {uri: 'https://i.pinimg.com/564x/49/20/c7/4920c76a9c6e3fe8a1d8a12f1c565158.jpg'},
+            rotation: getRandomRotate()
         },
         {
             value: 1,
-            img: {uri: 'https://i.pinimg.com/564x/49/20/c7/4920c76a9c6e3fe8a1d8a12f1c565158.jpg'}
+            img: {uri: 'https://i.pinimg.com/564x/49/20/c7/4920c76a9c6e3fe8a1d8a12f1c565158.jpg'},
+            rotation: getRandomRotate()
         },
         {
             value: 2,
-            img: {uri: 'https://i.pinimg.com/originals/ee/d3/1d/eed31d9f909127fcbb453c5d6b800ab1.png'}
+            img: {uri: 'https://i.pinimg.com/originals/ee/d3/1d/eed31d9f909127fcbb453c5d6b800ab1.png'},
+            rotation: getRandomRotate()
         },
         {
             value: 2,
-            img: {uri: 'https://i.pinimg.com/originals/ee/d3/1d/eed31d9f909127fcbb453c5d6b800ab1.png'}
+            img: {uri: 'https://i.pinimg.com/originals/ee/d3/1d/eed31d9f909127fcbb453c5d6b800ab1.png'},
+            rotation: getRandomRotate()
     
         },
         {
             value: 3,
-            img: {uri: 'https://i.pinimg.com/originals/bc/4b/eb/bc4beb5a4e09e82c0e75a09e206d21fc.png'}
+            img: {uri: 'https://i.pinimg.com/originals/bc/4b/eb/bc4beb5a4e09e82c0e75a09e206d21fc.png'},
+            rotation: getRandomRotate()
         },
         {
             value: 3,
-            img: {uri: 'https://i.pinimg.com/originals/bc/4b/eb/bc4beb5a4e09e82c0e75a09e206d21fc.png'}
+            img: {uri: 'https://i.pinimg.com/originals/bc/4b/eb/bc4beb5a4e09e82c0e75a09e206d21fc.png'},
+            rotation: getRandomRotate()
     
         },
         {
             value: 4,
-            img: {uri: 'https://cdn.thedesigninspiration.com/wp-content/uploads/2012/08/Amazing-Animal-020.png'}
+            img: {uri: 'https://cdn.thedesigninspiration.com/wp-content/uploads/2012/08/Amazing-Animal-020.png'},
+            rotation: getRandomRotate()
         },
         {
             value: 4,
-            img: {uri: 'https://cdn.thedesigninspiration.com/wp-content/uploads/2012/08/Amazing-Animal-020.png'}
+            img: {uri: 'https://cdn.thedesigninspiration.com/wp-content/uploads/2012/08/Amazing-Animal-020.png'},
+            rotation: getRandomRotate()
     
         }
     ])
@@ -75,9 +89,13 @@ const GameMemoryCards = (props) => {
                 source={require('../../../assets/images/child/games/game-bg.png')}
             />
             <KidBackBtn onPress={() => history.goBack()} />
-            <View style={{flex:5, flexDirection:"row", justifyContent:"center", alignItems:"center", padding:RFValue(30), flexWrap:"wrap"}}>
+            <View style={{flex:5, width:"100%", flexDirection:"row", justifyContent:"center", alignItems:"center", paddingHorizontal:'10%', paddingTop:RFValue(20), flexWrap:"wrap"}}>
                 {
-                    data.map((item, idx) => <Card key={idx} open={openedCards.includes(idx) || detectedCards.includes(idx)} img={item.img} value={item.value} 
+                    data.map((item, idx) => <Card 
+                    key={idx} open={openedCards.includes(idx) || detectedCards.includes(idx)} 
+                    img={item.img} 
+                    value={item.value} 
+                    rotation={item.rotation}
                     onPress={() => {
                         if(openedCards.length < 2){
                             const newOpenCards = [...openedCards, idx]
